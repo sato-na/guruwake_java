@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">guruwake</string>
+    <string name="app_name_jp">ぐるわけ</string>
+    <string name="start">スタート</string>
+    <string name="lang">- java -</string>
+    <string name="who_toolbar">誰が？</string>
+    <string name="next">次へ</string>
+    <string name="name">名前を入れてね</string>
+    <string name="add">追加</string>
+    <string name="how_many">何個のグループに?</string>
+    <string name="unit">個</string>
+    <string name="check">確認！</string>
+    <string name="check_group_num">を個のグループに分ける</string>
+    <string name="decide">決定</string>
+    <string name="result_group">グループ決定！</string>
+    <string name="result">グループ1だれかさん</string>
+    <string name="title">タイトルへ</string>
 </resources>
