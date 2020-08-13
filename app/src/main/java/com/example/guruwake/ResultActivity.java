@@ -28,28 +28,29 @@ public class ResultActivity extends AppCompatActivity {
 
 
         // グループ分けをして表示する
+        TextView resultTxt = findViewById(R.id.result_txt);
         String rTxt = "";
         int groupNumI = Integer.parseInt(groupNum);
         int memberNum = memberL.size();
-        TextView resultTxt = findViewById(R.id.result_txt);
         Collections.shuffle(memberL);
         for (int n = 1; n <= groupNumI; n++) {
+
             rTxt += "グループ" + n + "\n";
             int p = memberNum / groupNumI;
             if (n <= memberNum % groupNumI) {
+
                 p++;
             }
-            int i = 0;
             for (int q = 0; q < p; q++) {
-                rTxt += "  " + memberL.get(i) + "\n";
-                memberL.remove(i);
-                i++;
+
+                rTxt += "  " + memberL.get(0) + "\n";
+                memberL.remove(0);
             }
         }
         resultTxt.setText(rTxt);
 
 
-        // タイトルボタンの遷移
+        // タイトルボタンの処理
         Button titleBtn = findViewById(R.id.title_btn);
         titleBtn.setOnClickListener(new View.OnClickListener() {
 

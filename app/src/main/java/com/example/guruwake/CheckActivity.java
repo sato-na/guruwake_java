@@ -54,9 +54,10 @@ public class CheckActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // 画面遷移
                 Intent intent = new Intent(CheckActivity.this, ResultActivity.class);
-                intent.putExtra("MEMBER_L", memberL);
-                intent.putExtra("GROUP_NUM", groupNum);
+                intent.putExtra("MEMBER_L", memberL);       // ResultActivityにmemberLを送る
+                intent.putExtra("GROUP_NUM", groupNum);     // ResultActivityにgroupNumを送る
                 startActivity(intent);
             }
         });

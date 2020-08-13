@@ -28,12 +28,11 @@ public class HowManyActivity extends AppCompatActivity {
         // ツールバーの設定
         Toolbar hmTB = findViewById(R.id.hm_tb);
         setSupportActionBar(hmTB);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);  // 戻るボタンの表示
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // 戻るボタンを押したときの処理
 
-
-        // 次へボタンの遷移
+        // 次へボタンの処理
         Button nextHMBtn = findViewById(R.id.next_hm_btn);
         nextHMBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -41,16 +40,18 @@ public class HowManyActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // グループの個数を保存
-                EditText groupNum = findViewById(R.id.group_num_et);
+                EditText groupNumE = findViewById(R.id.group_num_et);
+                String groupNum = groupNumE.getText().toString();
 
                 // 画面遷移
                 Intent intent = new Intent(HowManyActivity.this, CheckActivity.class);
                 intent.putExtra("MEMBER_L", memberL);         // memberLをCheckActivityに送る
-                intent.putExtra("GROUP_NUM", groupNum.getText().toString());    // groupNumをCheckActivityに送る
+                intent.putExtra("GROUP_NUM", groupNum);    // groupNumをCheckActivityに送る
                 startActivity(intent);
             }
         });
     }
+
 
     // 戻るボタンの処理内容
     @Override

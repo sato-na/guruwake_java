@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // スタートボタンの遷移
+        // スタートボタンの処理
         Button startButton = findViewById(R.id.start_btn);
         startButton.setOnClickListener(new View.OnClickListener() {
 

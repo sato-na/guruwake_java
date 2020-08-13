@@ -18,8 +18,6 @@ public class WhoActivity extends AppCompatActivity {
 
 
     ArrayList<String>memberL = new ArrayList<>();
-    ArrayList<String>memberLR = new ArrayList<>();
-    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,28 +26,21 @@ public class WhoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_who);
 
 
-        // Toolbarの設定
+        // ツールバーの設定
         Toolbar whoTb = findViewById(R.id.who_tb);
         setSupportActionBar(whoTb);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setDisplayShowHomeEnabled(true);  // 戻るボタンの表示
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);  // 戻るボタンを押したときの処理
 
-
-        // EditTextからListViewに追加
-        final ListView memberLV = findViewById(R.id.member_lv);
+        // 追加ボタンの処理
         Button addBtn = findViewById(R.id.add_btn);
-
-
-        // 追加ボタンが押された時の処理
         addBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                // 追加ボタンの機能を備えたメソッドの呼び出し
-                addStringData();
-                memberLV.setAdapter(adapter);
+                addMember();
 
             }
         });
@@ -62,7 +53,10 @@ public class WhoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                // 引き渡す値の調整
                 Collections.reverse(memberL);
+
+                // 画面遷移
                 Intent intent = new Intent(WhoActivity.this, HowManyActivity.class);
                 intent.putExtra("MEMBER_L", memberL);   // memberLをHowManyActivityに送る
                 startActivity(intent);
@@ -70,7 +64,8 @@ public class WhoActivity extends AppCompatActivity {
         });
     }
 
-    // 戻るボタンの処理内容
+
+    // 戻るボタンの処理
     @Override
     public boolean onSupportNavigateUp() {
 
@@ -78,14 +73,17 @@ public class WhoActivity extends AppCompatActivity {
         return super.onSupportNavigateUp();
     }
 
+
     // 追加ボタンの処理内容
-    private void addStringData() {
+    private void addMember() {
 
         EditText memberET = findViewById(R.id.member_et);
+        ListView memberLV = findViewById(R.id.member_lv);
         memberL.add(memberET.getText().toString());
         memberET.getEditableText().clear();
-        memberLR = (ArrayList<String>) memberL.clone();
+        ArrayList<String> memberLR = (ArrayList<String>) memberL.clone();
         Collections.reverse(memberLR);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, memberLR);  // adapterの設定
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, memberLR);
+        memberLV.setAdapter(adapter);
     }
 }
