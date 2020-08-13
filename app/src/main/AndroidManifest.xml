@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.guruwake">
+    package="com.example.guruwake_java">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.guruwake_java.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".WhoActivity" />
+        <activity android:name="com.example.guruwake_java.WhoActivity" />
 
-        <activity android:name=".HowManyActivity" />
+        <activity android:name="com.example.guruwake_java.HowManyActivity" />
 
-        <activity android:name=".CheckActivity" />
+        <activity android:name="com.example.guruwake_java.CheckActivity" />
 
-        <activity android:name=".ResultActivity"/>
+        <activity android:name="com.example.guruwake_java.ResultActivity"/>
     </application>
 </manifest>

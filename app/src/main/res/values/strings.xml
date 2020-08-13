@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">guruwake</string>
+    <string name="app_name">guruwake_java</string>
     <string name="app_name_jp">ぐるわけ</string>
     <string name="start">スタート</string>
     <string name="lang">- java -</string>

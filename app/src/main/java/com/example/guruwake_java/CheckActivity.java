@@ -1,4 +1,4 @@
-package com.example.guruwake;
+package com.example.guruwake_java;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CheckActivity extends AppCompatActivity {
 

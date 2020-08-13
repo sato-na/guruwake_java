@@ -1,4 +1,4 @@
-package com.example.guruwake;
+package com.example.guruwake_java;
 
 import androidx.appcompat.app.AppCompatActivity;
 
